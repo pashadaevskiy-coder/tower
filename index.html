@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Tower Chaos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loading-content">
+            <h1 class="loading-title">TOWER CHAOS</h1>
+            <div class="loading-bar-container">
+                <div class="loading-bar" id="loading-bar"></div>
+            </div>
+            <div class="loading-text" id="loading-text">Загрузка...</div>
+        </div>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+    
+    <div id="ui-layer">
+        <div id="height-display">
+            <div id="current-height">ВЫСОТА: <span>0</span>м</div>
+            <div id="best-height">РЕКОРД: <span>0</span>м</div>
+        </div>
+        
+        <div id="coins-display">
+            <span id="coins-icon">●</span>
+            <span id="coins-count">0</span>
+        </div>
+
+        <button id="mute-btn" aria-label="Звук">
+            <span id="mute-icon">🔊</span>
+        </button>
+        
+        <div id="checkpoint-flash">
+            <span>ЧЕКПОИНТ!</span>
+        </div>
+    </div>
+    
+    <div id="touch-layer" aria-hidden="true"></div>
+    
+    <div id="main-menu" class="screen active">
+        <div class="menu-content">
+            <h1>TOWER CHAOS</h1>
+            <div class="subtitle">Расслабляющий подъём вверх</div>
+            <button id="play-btn" class="menu-btn">ИГРАТЬ</button>
+            <button id="skins-btn" class="menu-btn">СКИНЫ</button>
+            <div class="best-score">РЕКОРД: <span id="menu-best">0</span>м</div>
+        </div>
+    </div>
+    
+    <div id="game-over" class="screen">
+        <div class="menu-content">
+            <h2>ИГРА ОКОНЧЕНА</h2>
+            <div class="result">
+                <div class="height-result">ВЫСОТА: <span id="final-height">0</span>м</div>
+                <div class="best-result">РЕКОРД: <span id="final-best">0</span>м</div>
+                <div class="coins-result">+<span id="coins-earned">0</span> монет</div>
+            </div>
+            <button id="retry-btn" class="menu-btn">ЗАНОВО</button>
+            <button id="revive-btn" class="menu-btn">ПРОДОЛЖИТЬ</button>
+            <button id="menu-btn" class="menu-btn menu-btn-back">В МЕНЮ</button>
+        </div>
+    </div>
+    
+    <div id="skins-menu" class="screen">
+        <div class="menu-content">
+            <h2>СКИНЫ</h2>
+            <div id="coins-skins">МОНЕТЫ: <span id="skins-coins">0</span></div>
+            <div id="skins-grid"></div>
+            <button id="buy-btn" class="menu-btn buy-btn-hidden">КУПИТЬ ЗА <span id="buy-price">0</span></button>
+            <button id="back-btn" class="menu-btn">НАЗАД</button>
+        </div>
+    </div>
+
+    <script src="https://yandex.ru/games/sdk/v2"></script>
+    <script src="game.js"></script>
+</body>
+</html>
